@@ -1,3 +1,5 @@
+import { Profile } from './profile/profile';
+
 import { Container } from './App.styled';
 
 export const App = () => {
@@ -5,6 +7,7 @@ export const App = () => {
     <Container>
       {' '}
       <div>React homework template</div>
+      <Profile />
     </Container>
   );
 };
