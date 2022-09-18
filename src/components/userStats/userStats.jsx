@@ -1,25 +1,10 @@
-import {
-  StatsList,
-  StatItem,
-  StatLabel,
-  StatQuantity,
-} from './userStats.styled';
+import { StatItem, Statinfo } from 'components/userStats/userStats.styled';
 
-export const UserStats = () => {
+export const StatsInfo = ({ name, value }) => {
   return (
-    <StatsList>
-      <StatItem>
-        <StatLabel>Followers</StatLabel>
-        <StatQuantity>1000</StatQuantity>
-      </StatItem>
-      <StatItem>
-        <StatLabel>Views</StatLabel>
-        <StatQuantity>2000</StatQuantity>
-      </StatItem>
-      <StatItem>
-        <StatLabel>Likes</StatLabel>
-        <StatQuantity>3000</StatQuantity>
-      </StatItem>
-    </StatsList>
+    <StatItem>
+      <Statinfo>{name}</Statinfo>
+      <Statinfo>{value}</Statinfo>
+    </StatItem>
   );
 };

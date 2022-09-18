@@ -1,13 +1,12 @@
 import { Profile } from './profile/profile';
 
 import { Container } from './App.styled';
+import userProfile from '../user.json';
 
 export const App = () => {
   return (
     <Container>
-      {' '}
-      <div>React homework template</div>
-      <Profile />
+      <Profile userProfile={userProfile} />
     </Container>
   );
 };

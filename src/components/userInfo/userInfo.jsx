@@ -7,15 +7,15 @@ import {
   Avatar,
 } from './userInfo.styled';
 
-export const UserCard = () => {
+export const UserCard = ({ username, tag, location, avatar }) => {
   return (
     <UserInfo>
       <Avatar>
         <FaUserCircle size={200} />
       </Avatar>
-      <UserName>Petra Marica</UserName>
-      <UserTag>@pmarica</UserTag>
-      <UserLocation>Salvador, Brasil</UserLocation>
+      <UserName>{username}</UserName>
+      <UserTag>@${tag}</UserTag>
+      <UserLocation>${location}</UserLocation>
     </UserInfo>
   );
 };

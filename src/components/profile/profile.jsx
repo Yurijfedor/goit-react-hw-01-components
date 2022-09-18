@@ -1,39 +1,30 @@
 import { ProfileContainer } from './profile.styled';
-import { UserCard } from 'components/userInfo/userInfo';
-import { UserStats } from 'components/userStats/userStats';
+import { UserInfo } from './profile.styled';
+import { StatsInfo } from 'components/userStats/userStats';
+import { StatsList } from './profile.styled';
 
-export const Profile = () => {
+export const Profile = ({
+  userProfile: {
+    username,
+    tag,
+    location,
+    avatar,
+    stats: { followers, views, likes },
+  },
+}) => {
   return (
     <ProfileContainer>
-      <UserCard />
-      <UserStats />
-      {/* <div class="profile">
-        <div class="description">
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/1077/1077012.png"
-            alt="User avatar"
-            class="avatar"
-          />
-          <p class="name">Petra Marica</p>
-          <p class="tag">@pmarica</p>
-          <p class="location">Salvador, Brasil</p>
-        </div>
-
-        <ul class="stats">
-          <li>
-            <span class="label">Followers</span>
-            <span class="quantity">1000</span>
-          </li>
-          <li>
-            <span class="label">Views</span>
-            <span class="quantity">2000</span>
-          </li>
-          <li>
-            <span class="label">Likes</span>
-            <span class="quantity">3000</span>
-          </li>
-        </ul>
-      </div> */}
+      <UserInfo>
+        <img src={avatar} alt={username} />
+        <p>{username}</p>
+        <p>@{tag}</p>
+        <p>{location}</p>
+      </UserInfo>
+      <StatsList>
+        <StatsInfo name="followers" value={`${followers}`} />
+        <StatsInfo name="views" value={`${views}`} />
+        <StatsInfo name="likes" value={`${likes}`} />
+      </StatsList>
     </ProfileContainer>
   );
 };
