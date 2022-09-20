@@ -1,25 +1,18 @@
 import styled from 'styled-components';
 
-export const StatsList = styled.ul`
-  display: flex;
-  gap: 10px;
-  justify-content: space-around;
-  background-color: aqua;
-  padding: 0;
-`;
-
 export const StatItem = styled.li`
   width: 100%;
   display: grid;
-  border: 1px solid gray;
+  border: ${p => `${p.theme.borders.normal} ${p.theme.colors.primaryText}`};
+  padding: ${p => p.theme.space[4]}px;
 `;
 
-export const Statinfo = styled.span`
-  font-size: 25px;
-  color: gray;
+export const StatText = styled.span`
+  font-size: ${p => p.theme.fontSizes.m};
+  color: ${prop => prop.theme.colors.secondaryText};
 `;
 
-export const StatQuantity = styled.span`
-  color: gray;
-  font-size: 25px;
+export const StatValue = styled.span`
+  font-size: ${p => p.theme.fontSizes.m};
+  color: ${p => p.theme.colors.primaryText};
 `;

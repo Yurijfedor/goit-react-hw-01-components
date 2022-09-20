@@ -1,10 +1,24 @@
-import { StatItem, Statinfo } from 'components/userStats/userStats.styled';
+// import { ThemeProvider } from 'styled-components';
+// import { theme } from '../../constans/index';
+import PropTypes from 'prop-types';
+import {
+  StatItem,
+  StatText,
+  StatValue,
+} from 'components/userStats/userStats.styled';
 
-export const StatsInfo = ({ name, value }) => {
+export const StatsInfo = ({ text, children }) => {
   return (
+    // <ThemeProvider theme={theme}>
     <StatItem>
-      <Statinfo>{name}</Statinfo>
-      <Statinfo>{value}</Statinfo>
+      <StatText>{text}</StatText>
+      <StatValue>{children}</StatValue>
     </StatItem>
+    // </ThemeProvider>
   );
+};
+
+StatsInfo.propTypes = {
+  text: PropTypes.string.isRequired,
+  children: PropTypes.number.isRequired,
 };
