@@ -1,20 +1,20 @@
-// import { ThemeProvider } from 'styled-components';
-// import { theme } from '../../constans/index';
 import PropTypes from 'prop-types';
-import {
-  StatItem,
-  StatText,
-  StatValue,
-} from 'components/userStats/userStats.styled';
+import { StatText, StatValue } from 'components/userStats/userStats.styled';
+import { Box } from '../../constans/index';
 
 export const StatsInfo = ({ text, children }) => {
   return (
-    // <ThemeProvider theme={theme}>
-    <StatItem>
+    <Box
+      width="100%"
+      display="grid"
+      justifyContent="center"
+      border="normal"
+      borderColor="secondaryText"
+      p={4}
+    >
       <StatText>{text}</StatText>
       <StatValue>{children}</StatValue>
-    </StatItem>
-    // </ThemeProvider>
+    </Box>
   );
 };
 

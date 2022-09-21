@@ -1,14 +1,5 @@
-// import { ThemeProvider } from 'styled-components';
-// import { theme } from '../../constans/index';
-
 import PropTypes from 'prop-types';
-import {
-  UserInfo,
-  StatsList,
-  UserText,
-  UserName,
-  UserAvatar,
-} from './profile.styled';
+import { UserText, UserName, UserAvatar } from './profile.styled';
 import { StatsInfo } from 'components/userStats/userStats';
 import { Box } from '../../constans/index';
 
@@ -23,7 +14,6 @@ export const Profile = ({
 }) => {
   console.log(followers);
   return (
-    // <ThemeProvider theme={theme}>
     <Box
       width="400px"
       pt={4}
@@ -37,13 +27,12 @@ export const Profile = ({
         <UserText>@{tag}</UserText>
         <UserText>{location}</UserText>
       </Box>
-      <StatsList>
+      <Box display="flex" bg="backgroundColorStats">
         <StatsInfo text="followers">{followers}</StatsInfo>
         <StatsInfo text="views">{views}</StatsInfo>
         <StatsInfo text="likes">{likes}</StatsInfo>
-      </StatsList>
+      </Box>
     </Box>
-    // </ThemeProvider>
   );
 };
 
