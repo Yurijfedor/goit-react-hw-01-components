@@ -6,6 +6,8 @@ export const theme = {
     backgroundColorStats: '#f5eded',
     background: 'blue',
     text: 'black',
+    green: '#00ff00',
+    red: '#ff0000',
   },
   space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
   fonts: {

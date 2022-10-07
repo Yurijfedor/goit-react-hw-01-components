@@ -1,11 +1,12 @@
-import { StatsElement } from 'components/statsElement/statsElement';
-import { TitleStatistics, StatisticsList, StatsItem } from './statistic.styled';
+import PropTypes from 'prop-types';
+import { StatsItem } from 'components/statsItem/statsItem';
+import { TitleStatistics, StatisticsList } from './statistic.styled';
 import { Box } from 'constans';
 export const Statistics = ({ stats, title }) => {
   return (
     <Box
       width="400px"
-      pt={4}
+      pt={1}
       ml="auto"
       mr="auto"
       mt={5}
@@ -16,12 +17,29 @@ export const Statistics = ({ stats, title }) => {
       <StatisticsList>
         {stats.map(el => {
           return (
-            <StatsItem key={el.id}>
-              <StatsElement statsElement={el} />
-            </StatsItem>
+            <Box
+              key={el.id}
+              backgroundColor={getRandomHexColor()}
+              width="100%"
+              display="grid"
+              textAlign="center"
+              p={3}
+              as={'li'}
+            >
+              <StatsItem statsElement={el} />
+            </Box>
           );
         })}
       </StatisticsList>
     </Box>
   );
+};
+
+function getRandomHexColor() {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+}
+
+Statistics.prototype = {
+  stats: PropTypes.array.isRequired,
+  title: PropTypes.string,
 };

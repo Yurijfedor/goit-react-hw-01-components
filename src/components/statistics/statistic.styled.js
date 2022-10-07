@@ -16,4 +16,5 @@ export const StatsItem = styled.li`
   display: grid;
   text-align: center;
   font-size: ${prop => prop.theme.space[4]}px;
+  background-color: #${Math.floor(Math.random() * 16777215).toString(16)};
 `;
