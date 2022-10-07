@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import { Profile } from './profile/profile';
 import { Statistics } from './statistics/statistics';
 import { FriendList } from './friendList/friendList';
+import { TransactionHistory } from './TransactionHistory/TransactionHistory';
 
 // import { Container } from './App.styled';
 import userProfile from '../data/user.json';
 import stats from '../data/data.json';
 import friends from '../data/friends.json';
+import transactions from '../data/transactions.json';
 
 import { Box } from '../constans/index';
 
@@ -17,6 +19,7 @@ export const App = () => {
       <Profile userProfile={userProfile} />
       <Statistics stats={stats} title="upload stats" />
       <FriendList friends={friends} />
+      <TransactionHistory items={transactions} />
     </Box>
   );
 };
@@ -32,4 +35,8 @@ Profile.propTypes = {
 
 FriendList.propTypes = {
   friends: PropTypes.array.isRequired,
+};
+
+TransactionHistory.propTypes = {
+  items: PropTypes.array.isRequired,
 };
