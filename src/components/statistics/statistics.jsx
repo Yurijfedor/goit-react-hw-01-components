@@ -13,7 +13,7 @@ export const Statistics = ({ stats, title }) => {
       boxShadow="rgba(0, 0, 0, 0.24) 0px 3px 8px"
       as={'section'}
     >
-      <TitleStatistics> {title} </TitleStatistics>
+      <>{title && <TitleStatistics> {title} </TitleStatistics>}</>
       <StatisticsList>
         {stats.map(el => {
           return (
