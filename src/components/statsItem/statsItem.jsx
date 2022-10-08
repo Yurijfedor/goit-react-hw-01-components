@@ -10,7 +10,9 @@ export const StatsItem = ({ statsElement: { label, percentage } }) => {
   );
 };
 
-StatsItem.prototype = {
-  label: PropTypes.string.isRequired,
-  percentage: PropTypes.number.isRequired,
+StatsItem.propTypes = {
+  statsElement: PropTypes.shape({
+    label: PropTypes.string.isRequired,
+    percentage: PropTypes.number.isRequired,
+  }),
 };

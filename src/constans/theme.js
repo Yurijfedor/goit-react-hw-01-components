@@ -8,6 +8,9 @@ export const theme = {
     text: 'black',
     green: '#00ff00',
     red: '#ff0000',
+    tableTextColor: '#686461',
+    theadBgColor: '#8FD4C1',
+    tableTrSecondaryBgColor: '#E8E6D1',
   },
   space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
   fonts: {

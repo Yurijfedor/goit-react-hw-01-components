@@ -1,19 +1,22 @@
 import PropTypes from 'prop-types';
+import { TableTdEl, TableTrEl } from './transactionItem.styled';
 
 export const TransactionItem = ({
   transactionItem: { type, amount, currency },
 }) => {
   return (
-    <tr>
-      <td>{type}</td>
-      <td>{amount}</td>
-      <td>{currency}</td>
-    </tr>
+    <TableTrEl>
+      <TableTdEl>{type}</TableTdEl>
+      <TableTdEl>{amount}</TableTdEl>
+      <TableTdEl>{currency}</TableTdEl>
+    </TableTrEl>
   );
 };
 
 TransactionItem.propTypes = {
-  type: PropTypes.string.isRequired,
-  amount: PropTypes.string,
-  currency: PropTypes.string,
+  transactionItem: PropTypes.shape({
+    type: PropTypes.string.isRequired,
+    amount: PropTypes.string,
+    currency: PropTypes.string,
+  }),
 };

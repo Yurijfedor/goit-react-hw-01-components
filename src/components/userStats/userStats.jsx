@@ -15,7 +15,7 @@ export const StatsInfo = ({ text, children }) => {
   );
 };
 
-StatsInfo.prototype = {
+StatsInfo.propTypes = {
   text: PropTypes.string.isRequired,
   children: PropTypes.number.isRequired,
 };
